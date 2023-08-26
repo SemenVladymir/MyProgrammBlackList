@@ -37,6 +37,12 @@
             button1 = new Button();
             checkedListBox1 = new CheckedListBox();
             groupBox2 = new GroupBox();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
+            label5 = new Label();
+            label6 = new Label();
+            textBox2 = new TextBox();
+            label4 = new Label();
             btnChange = new Button();
             btnDelete = new Button();
             listBox1 = new ListBox();
@@ -105,12 +111,13 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.DodgerBlue;
             button1.Location = new Point(102, 475);
             button1.Name = "button1";
             button1.Size = new Size(134, 46);
             button1.TabIndex = 1;
             button1.Text = "Add to list - >";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // checkedListBox1
@@ -123,43 +130,103 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(dateTimePicker2);
+            groupBox2.Controls.Add(dateTimePicker1);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(btnChange);
             groupBox2.Controls.Add(btnDelete);
             groupBox2.Controls.Add(listBox1);
-            groupBox2.Location = new Point(384, 33);
+            groupBox2.Location = new Point(384, 24);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(530, 526);
+            groupBox2.Size = new Size(530, 535);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Black list";
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(316, 78);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(107, 27);
+            dateTimePicker2.TabIndex = 17;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.Location = new Point(116, 78);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(107, 27);
+            dateTimePicker1.TabIndex = 16;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(242, 83);
+            label5.Name = "label5";
+            label5.Size = new Size(68, 20);
+            label5.TabIndex = 15;
+            label5.Text = "End time";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(31, 83);
+            label6.Name = "label6";
+            label6.Size = new Size(74, 20);
+            label6.TabIndex = 14;
+            label6.Text = "Start time";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(116, 34);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(309, 27);
+            textBox2.TabIndex = 4;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(33, 36);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 20);
+            label4.TabIndex = 3;
+            label4.Text = "App name";
+            // 
             // btnChange
             // 
-            btnChange.Location = new Point(53, 470);
+            btnChange.BackColor = Color.Beige;
+            btnChange.Location = new Point(67, 475);
             btnChange.Name = "btnChange";
             btnChange.Size = new Size(142, 38);
             btnChange.TabIndex = 2;
             btnChange.Text = "Change";
-            btnChange.UseVisualStyleBackColor = true;
+            btnChange.UseVisualStyleBackColor = false;
+            btnChange.Click += btnChange_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(301, 470);
+            btnDelete.BackColor = Color.Crimson;
+            btnDelete.Location = new Point(315, 475);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(142, 38);
             btnDelete.TabIndex = 1;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(21, 29);
+            listBox1.Location = new Point(22, 117);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(487, 424);
+            listBox1.Size = new Size(487, 324);
             listBox1.TabIndex = 0;
+            listBox1.SelectedIndexChanged += ListBox1_SelectedIndexChanged;
             // 
             // Form3
             // 
@@ -175,8 +242,11 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
+
+
 
         #endregion
 
@@ -192,5 +262,11 @@
         private Button btnChange;
         private Button btnDelete;
         private ListBox listBox1;
+        private TextBox textBox2;
+        private Label label4;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
+        private Label label5;
+        private Label label6;
     }
 }

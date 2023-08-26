@@ -154,12 +154,13 @@
             // 
             // btnAdd
             // 
+            btnAdd.BackColor = Color.DodgerBlue;
             btnAdd.Location = new Point(501, 54);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(132, 39);
             btnAdd.TabIndex = 5;
             btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // label3
@@ -218,22 +219,24 @@
             // 
             // btnDelete
             // 
+            btnDelete.BackColor = Color.Crimson;
             btnDelete.Location = new Point(501, 114);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(132, 39);
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnChange
             // 
+            btnChange.BackColor = Color.Beige;
             btnChange.Location = new Point(501, 42);
             btnChange.Name = "btnChange";
             btnChange.Size = new Size(132, 39);
             btnChange.TabIndex = 6;
             btnChange.Text = "Change";
-            btnChange.UseVisualStyleBackColor = true;
+            btnChange.UseVisualStyleBackColor = false;
             btnChange.Click += BtnChange_Click;
             // 
             // listBox1

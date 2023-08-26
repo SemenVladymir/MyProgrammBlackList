@@ -135,5 +135,28 @@ namespace MyProgrammBlackList
             if (!char.IsDigit(number) && number != 8)
                 e.Handled = true;
         }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = listBox1.SelectedItem.ToString();
+            textBox1.Text = apps.FirstOrDefault(ee => ee.Name == listBox1.SelectedItem.ToString()).Duration.ToString();
+            dateTimePicker1.Text = apps.FirstOrDefault(ee => ee.Name == listBox1.SelectedItem.ToString()).StartTime.ToString();
+            dateTimePicker2.Text = apps.FirstOrDefault(ee => ee.Name == listBox1.SelectedItem.ToString()).EndTime.ToString();
+            comboBox1.SelectedIndex = (int)apps.FirstOrDefault(ee => ee.Name == listBox1.SelectedItem.ToString()).UserId-1;
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            App newApp = apps.FirstOrDefault(ee => ee.Name == listBox1.SelectedItem.ToString());
+            newApp.Name = textBox2.Text;
+            newApp.Duration = Convert.ToInt32(textBox1.Text);
+            newApp.StartTime = dateTimePicker1.Value;
+            newApp.EndTime = dateTimePicker2.Value;
+            UpdateApp(newApp);
+            listBox1.Items.Clear();
+            apps = SelectApps();
+            foreach (App app in apps)
+                listBox1.Items.Add(app.Name);
+        }
     }
 }
